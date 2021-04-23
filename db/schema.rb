@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_04_23_171005) do
     t.datetime "remember_created_at"
     t.string "first_name", null: false
     t.string "last_name", null: false
-    t.integer "role"
+    t.integer "role", default: 0
     t.bigint "country_id"
     t.bigint "profession_id", null: false
     t.datetime "created_at", precision: 6, null: false
