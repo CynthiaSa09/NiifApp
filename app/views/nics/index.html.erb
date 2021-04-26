@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Nics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Text</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nics.each do |nic| %>
+      <tr>
+        <td><%= nic.name %></td>
+        <td><%= nic.number %></td>
+        <td><%= nic.text %></td>
+        <td><%= nic.category_id %></td>
+        <td><%= link_to 'Show', nic %></td>
+        <td><%= link_to 'Edit', edit_nic_path(nic) %></td>
+        <td><%= link_to 'Destroy', nic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nic', new_nic_path %>
