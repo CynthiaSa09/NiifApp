@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
 
   belongs_to :country
-  has_many :profession
+  belongs_to :profession
 end
