@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Niifs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Text</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @niifs.each do |niif| %>
+      <tr>
+        <td><%= niif.name %></td>
+        <td><%= niif.number %></td>
+        <td><%= niif.text %></td>
+        <td><%= link_to 'Show', niif %></td>
+        <td><%= link_to 'Edit', edit_niif_path(niif) %></td>
+        <td><%= link_to 'Destroy', niif, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Niif', new_niif_path %>

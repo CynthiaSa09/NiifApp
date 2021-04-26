@@ -1,0 +1,2 @@
+class Niif < ApplicationRecord
+end

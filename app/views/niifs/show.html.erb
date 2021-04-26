@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @niif.name %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @niif.number %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @niif.text %>
+</p>
+
+<%= link_to 'Edit', edit_niif_path(@niif) %> |
+<%= link_to 'Back', niifs_path %>

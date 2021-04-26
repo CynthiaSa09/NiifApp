@@ -2,7 +2,7 @@
 
 <h1>Nics</h1>
 
-<table>
+<table class="container">
   <thead>
     <tr>
       <th>Name</th>
@@ -20,9 +20,6 @@
         <td><%= nic.number %></td>
         <td><%= nic.text %></td>
         <td><%= nic.category_id %></td>
-        <td><%= link_to 'Show', nic %></td>
-        <td><%= link_to 'Edit', edit_nic_path(nic) %></td>
-        <td><%= link_to 'Destroy', nic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Nic', new_nic_path %>
+
