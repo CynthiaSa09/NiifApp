@@ -21,3 +21,6 @@ cate = Category.create([{name:'Situación patrimonial o balance'},{name:'Cuenta 
 u = User.create([{first_name:'Cynthia', last_name:'Rodríguez', country_id: 1, profession_id: 4, email:'cinthya@cinthya.com', password:'123456'}])
 
 
+
+
+Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each { |seed| load seed}
