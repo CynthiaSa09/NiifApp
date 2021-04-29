@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-
   belongs_to :country
   belongs_to :profession
+
+  has_one_attached :profile_photo
 end

@@ -1,24 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @nic.name %>
-</p>
-
-<p>
-  <strong>Number:</strong>
-  <%= @nic.number %>
-</p>
-
-<p>
-  <strong>Text:</strong>
-  <%= @nic.text %>
+  <strong>Nic:</strong>
+  <%= @nic.number %>.- <%= @nic.name %>
 </p>
 
 <p>
   <strong>Category:</strong>
   <%= @nic.category_id %>
 </p>
+
+<% @contents.map do |content| %>
+<% if content.text.present? %>
+  <<%= content.label %>><%= content.number.present? ? "#{content.number}.- " : '' %><%= content.text %></<%= content.label %>>
+<% end %>
+<% end %>
 
 <%= link_to 'Edit', edit_nic_path(@nic) %> |
 <%= link_to 'Back', nics_path %>

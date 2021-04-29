@@ -64,6 +64,6 @@ class NiifsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def niif_params
-      params.require(:niif).permit(:name, :number, :text)
+      params.require(:niif).permit(:name, :number, :content)
     end
 end

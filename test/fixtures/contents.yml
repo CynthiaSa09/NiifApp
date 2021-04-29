@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  number: MyString
+  order: 1
+  label: 1
+  textable: one
+  textable_type: Textable
+
+two:
+  name: MyString
+  number: MyString
+  order: 1
+  label: 1
+  textable: two
+  textable_type: Textable

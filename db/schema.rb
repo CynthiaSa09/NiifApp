@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_26_221729) do
+ActiveRecord::Schema.define(version: 2021_04_27_232607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(version: 2021_04_26_221729) do
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "contents", force: :cascade do |t|
+    t.text "text"
+    t.string "number"
+    t.integer "order", default: 0
+    t.integer "label", default: 0
+    t.string "textable_type"
+    t.bigint "textable_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["textable_type", "textable_id"], name: "index_contents_on_textable"
   end
 
   create_table "countries", force: :cascade do |t|
@@ -30,7 +42,6 @@ ActiveRecord::Schema.define(version: 2021_04_26_221729) do
   create_table "nics", force: :cascade do |t|
     t.string "name"
     t.integer "number"
-    t.text "text"
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -40,7 +51,6 @@ ActiveRecord::Schema.define(version: 2021_04_26_221729) do
   create_table "niifs", force: :cascade do |t|
     t.string "name"
     t.integer "number"
-    t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

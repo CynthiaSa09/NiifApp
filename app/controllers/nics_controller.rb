@@ -8,6 +8,7 @@ class NicsController < ApplicationController
 
   # GET /nics/1 or /nics/1.json
   def show
+    @contents = @nic.contents.sort_by(&:order)
   end
 
   # GET /nics/new
@@ -64,6 +65,6 @@ class NicsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def nic_params
-      params.require(:nic).permit(:name, :number, :text, :category_id)
+      params.require(:nic).permit(:name, :number, :content, :category_id)
     end
 end
