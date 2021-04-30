@@ -6,6 +6,7 @@ class CreateContents < ActiveRecord::Migration[6.1]
       t.integer :order, default: 0
       t.integer :label, default: 0
       t.references :textable, polymorphic: true
+      # t.boolean :deleted, default: false
 
       t.timestamps
     end

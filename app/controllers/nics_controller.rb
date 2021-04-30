@@ -1,5 +1,6 @@
 class NicsController < ApplicationController
-  before_action :set_nic, only: %i[ show edit update destroy ]
+  before_action :set_nic, only: %i[ show edit update destroy search ]
+  before_action :authenticate_user!
 
   # GET /nics or /nics.json
   def index
@@ -57,6 +58,14 @@ class NicsController < ApplicationController
     end
   end
 
+  def search
+    @results = @nic.contents.where('text ilike ?', "%#{params[:s]}%").pluck(:text)
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_nic
@@ -65,6 +74,6 @@ class NicsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def nic_params
-      params.require(:nic).permit(:name, :number, :content, :category_id)
+      params.require(:nic).permit(:name, :number, :text, :category_id)
     end
 end

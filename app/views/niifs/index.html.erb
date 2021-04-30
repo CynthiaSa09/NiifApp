@@ -2,13 +2,6 @@
 
 <h1>Niifs</h1>
 
-<form class="form-inline-center">
-  <input class="form-control mr-sm-2" type="search" placeholder="Search"
-  aria-label="Search" name="content">
-  <button class="btn btn-outline-danger my-2 my-ms-5"
-  type="submit">Search</button>
-</form>
-
 <table class="container">
   <thead>
     <tr>
@@ -23,6 +16,7 @@
       <tr>
         <td><%= niif.name %></td>
         <td><%= niif.number %></td>
+        <td><%= link_to 'Show', niif %></td>
       </tr>
     <% end %>
   </tbody>

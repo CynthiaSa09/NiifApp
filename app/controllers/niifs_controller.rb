@@ -1,5 +1,6 @@
 class NiifsController < ApplicationController
-  before_action :set_niif, only: %i[ show edit update destroy ]
+  before_action :set_niif, only: %i[ show edit update destroy search ]
+  before_action :authenticate_user!
 
   # GET /niifs or /niifs.json
   def index
@@ -8,6 +9,7 @@ class NiifsController < ApplicationController
 
   # GET /niifs/1 or /niifs/1.json
   def show
+    @contents = @niif.contents.sort_by(&:order)
   end
 
   # GET /niifs/new
@@ -56,6 +58,14 @@ class NiifsController < ApplicationController
     end
   end
 
+  def search
+    @results = @niif.contents.where('text ilike ?', "%#{params[:s]}%").pluck(:text)
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_niif
@@ -64,6 +74,6 @@ class NiifsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def niif_params
-      params.require(:niif).permit(:name, :number, :content)
+      params.require(:niif).permit(:name, :number, :text)
     end
 end

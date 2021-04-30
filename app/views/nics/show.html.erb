@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
+<form class="form-inline-center" action="<%= search_nic_path(@nic) %>" method="GET" data-remote="true">
+  <input class="form-control mr-sm-2" type="search" placeholder="Search"
+  aria-label="Search" name="s">
+  <button class="btn btn-outline-danger my-2 my-ms-5" type="submit">Search</button>
+</form>
 
 <p>
   <strong>Nic:</strong>
