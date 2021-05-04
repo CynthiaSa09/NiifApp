@@ -11,6 +11,8 @@ Country.create!([{name:'Costa Rica'},{name:'México'},{name:'Afganistán'},{name
 Profession.create!([{name:'Contabilidad'},{name:'Matemáticas Financieras'},{name: 'Administración'},{name:'Banca y Finanzas'},{name:'Costos'},{name:'Derecho Fiscal'},{name:'Economía'},{name:'Estadistica'}])
 Category.create!([{name:'Situación patrimonial o balance'},{name:'Cuenta de pérdidas o ganancias'},{name:'Evolución del Patrimonio neto y Estado de Resultados integrales'},{name:'Estado de Flujos de Efectivo'},{name:'Notas aclaratorias de los estados anteriores o memoria'}])
 User.create!([{first_name:'Cynthia', last_name:'Rodríguez', country_id: 1, profession_id: 4, email:'cinthya@cinthya.com', password:'123456'}])
+Post.create!([{user_id: 1, title: 'Ultimas Noticias sobre las Nic 2121', image_url:'https://pasaportealconocimiento.com/wp-content/uploads/2018/11/Parte-1-img-4-800x321.jpg', content:'Según el artículo, se modificará la NIC 41 Agricultura'}])
+
 
 Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each { |seed| load seed}
 

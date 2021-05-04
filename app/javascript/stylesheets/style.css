@@ -5,11 +5,12 @@
 #search-results {
   position: absolute;
   top: 2.4em;
-  background: rgba(255,255,255,.75);
+  background: rgba(15, 14, 14, 0.301);
   padding: 1em 2em;
   width: 100%;
   box-sizing: border-box;
   border-radius: 0 0 5px 5px;
+  z-index: 3;
 }
 
 #search-results .results {
@@ -20,7 +21,40 @@
  list-style: none;
 }
 
+#search-results .result a {
+  color: white;
+  text-decoration: none;
+  height: 3em;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#search-results .result a:hover {
+  color: tomato;
+ }
+
+
+
 #content {
   text-align: left;
 }
 
+body {
+  height:100vh;
+}
+
+.title {
+  font-size: 3.5rem; 
+  color: tomato;
+  text-align: center;
+}
+
+.p {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.fixed-bottom {
+  z-index: 2;
+}

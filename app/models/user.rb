@@ -7,5 +7,7 @@ class User < ApplicationRecord
   belongs_to :country
   belongs_to :profession
 
+  has_many :posts
+
   has_one_attached :profile_photo
 end

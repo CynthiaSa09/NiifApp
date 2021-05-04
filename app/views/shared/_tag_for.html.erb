@@ -1,6 +1,7 @@
+<% result_scope = result_scope || 'nic' %>
+
 <<%= content.label %>
-  <%= "id=nic-#{content.order}" %>
-  <%= "id=niif-#{content.order}" %>
+  <%= "id=#{result_scope}-#{content.order}" %>
 >
 <%= yield %>
 </<%= content.label %>>

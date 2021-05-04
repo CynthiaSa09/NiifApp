@@ -59,7 +59,7 @@ class NicsController < ApplicationController
   end
 
   def search
-    @results = @nic.contents.where('text ilike ?', "%#{params[:s]}%").select(:text, :order)
+    @results = @nic.contents.where('text ilike ?', "%#{params[:s]}%").select(:text, :order, :number)
 
     respond_to do |format|
       format.js

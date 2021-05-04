@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
-
+<div class="container text-center">
 <form class="form-inline-center search-form" action="<%= search_niif_path(@niif) %>" method="GET" data-remote="true">
   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="s">
-  <button class="btn btn-outline-danger my-2 my-ms-5" type="submit">Search</button>
+  <button class="btn btn-outline-danger my-2 my-ms-5 " type="submit">Search</button>
     <div id="search-results">
       <ul class="results"></ul>
     </div>
 </form>
+</div>
 
 <p>
   <strong>Name:</strong>
@@ -21,7 +22,7 @@
 <div id="content" class="container">
 <% @contents.map do |content| %>
 <% if content.text.present? %>
-  <%= render 'shared/tag_for', content: content do %>
+  <%= render 'shared/tag_for', content: content, result_scope: 'niif' do %>
     <% if content.number.present? %>
     <%= "#{content.number}.-" %>
     <% end %>

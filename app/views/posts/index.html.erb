@@ -1,26 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="text-uppercase text-center text-white">NiifApp</h1>
-<p class="text-uppercase text-center text-white">Bienvenido a NiifApp pensaba para y por usted, el profesional del Area Financiera que busca una manera fácil de acceder a las Normas Internacionales de Información Financiera y sus Normas Internacionales Contables.
-También le invito a darse una vuelta por nuestro NiifBlog donde compartiremos noticias sobre el mundo Financiero Contable adelante......</p>
+<h1>NiifApp</h1>
+<p>Bienvenido a NiifApp pensaba para y por usted, el profesional del Area Financiera que busca una manera fácil de acceder a las Normas Internacionales de Información Financiera y sus Normas Internacionales Contables. También le invito a darse una vuelta por nuestro NiifBlog donde compartiremos noticias sobre el mundo Financiero Contable adelante......</p>
 
 <br>
 
-<div class="card-deck mb-3 bg-danger text-dark">
+<div class="card-deck mb-5 bg-danger text-dark">
   <% @posts.each do |post| %>
     <div class="card">
-    <img src="<%= post.image_url %>", width='100', height='200' class="card-img-top" alt="<%=post.title %>">
+    <img src="<%= post.image_url %>", width='150', height='250' class="card-img-top" alt="<%=post.title %>">
     <div class="card-body">
     <h5 class="card-title"><%= post.title %></h5>
     <p class="card-text"><%= post.content %></p>
     <p class="card-text"><small class="text-muted"><%= post.created_at%></small></p>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
-  </div>
     </div>
-    <% end %>
     </div>
+  <% end %>
+</div>
 
-
+<script src="detail.js"></script>
 
 
 

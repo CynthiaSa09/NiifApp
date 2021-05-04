@@ -1,12 +1,7 @@
+<% result_scope = result_scope || 'nic' %>
+
 <% results.map do |result| %>
-
 <li class="result">
-  <a href="#nic-<%= result.order %>"><%= result.text %></a>
+  <a href="#<%= result_scope %>-<%= result.order %>"><%= result.number if result.number.present? %>.- <%= result.text %></a>
 </li>
-<li class="result">
-  <a href="#niif-<%= result.order %>"><%= result.text %></a>
-</li>
-
 <% end %>
-
-

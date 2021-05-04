@@ -1,2 +1,2 @@
 console.log("<%= escape_javascript @results %>")
-document.querySelector('#search-results .results').innerHTML = '<%= escape_javascript render 'shared/search/results', results: @results %>' 
+document.querySelector('#search-results .results').innerHTML = '<%= escape_javascript render 'shared/search/results', results: @results, result_scope: 'niif' %>' 
