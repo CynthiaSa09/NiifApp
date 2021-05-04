@@ -1,0 +1,12 @@
+<% results.map do |result| %>
+
+<li class="result">
+  <a href="#nic-<%= result.order %>"><%= result.text %></a>
+</li>
+<li class="result">
+  <a href="#niif-<%= result.order %>"><%= result.text %></a>
+</li>
+
+<% end %>
+
+

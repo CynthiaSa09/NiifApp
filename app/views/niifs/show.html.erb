@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<form class="form-inline-center" action="<%= search_niif_path(@niif) %>" method="GET" data-remote="true">
-  <input class="form-control mr-sm-2" type="search" placeholder="Search"
-  aria-label="Search" name="s">
-  <button class="btn btn-outline-danger my-2 my-ms-5"
-  type="submit">Search</button>
+<form class="form-inline-center search-form" action="<%= search_niif_path(@niif) %>" method="GET" data-remote="true">
+  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="s">
+  <button class="btn btn-outline-danger my-2 my-ms-5" type="submit">Search</button>
+    <div id="search-results">
+      <ul class="results"></ul>
+    </div>
 </form>
 
 <p>
@@ -17,11 +18,18 @@
   <%= @niif.number %>
 </p>
 
+<div id="content" class="container">
 <% @contents.map do |content| %>
 <% if content.text.present? %>
-  <<%= content.label %>><%= content.number.present? ? "#{content.number}.- " : '' %><%= content.text %></<%= content.label %>>
-<% end %>
-<% end %>
+  <%= render 'shared/tag_for', content: content do %>
+    <% if content.number.present? %>
+    <%= "#{content.number}.-" %>
+    <% end %>
 
+    <%= content.text %>
+  <% end %>
+<% end %>
+<% end %>
+</div>
 <%= link_to 'Edit', edit_niif_path(@niif) %> |
 <%= link_to 'Back', niifs_path %>

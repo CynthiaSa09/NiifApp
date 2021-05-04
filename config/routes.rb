@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     # collection do
     #   get 'search_all', as: 'search_all'
     # end
-
+    
     member do
       get 'search', as: 'search'
     end
@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     session: 'users/sessions', registrations: 'users/registrations'
   }
-
- 
-  root to: "home#index"
+  
+  
+  resources :posts do 
+  root to: "posts#index"
+  end
 end

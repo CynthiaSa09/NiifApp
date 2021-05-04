@@ -59,7 +59,7 @@ class NiifsController < ApplicationController
   end
 
   def search
-    @results = @niif.contents.where('text ilike ?', "%#{params[:s]}%").pluck(:text)
+    @results = @niif.contents.where('text ilike ?', "%#{params[:s]}%").select(:text, :order)
 
     respond_to do |format|
       format.js
