@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :posts do 
+    resources :comments
+  end
+
+  
   resources :niifs do 
     member do
       get 'search', as: 'search'
@@ -20,6 +24,5 @@ Rails.application.routes.draw do
   }
   
   
-
   root to: "posts#index"
 end

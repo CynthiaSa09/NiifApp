@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<div class="container text-center">
 
 <p>
   <strong>Title:</strong>
@@ -6,8 +7,7 @@
 </p>
 
 <p>
-  <strong>Image url:</strong>
-  <%= @post.image_url %>
+  <%= image_tag @post.image_url, width:500, height:300 %>
 </p>
 
 <p>
@@ -15,5 +15,24 @@
   <%= @post.content %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Edit', edit_post_path(@post), class:"btn btn-outline-danger" %> |
+<%= link_to 'Back', posts_path,class:"btn btn-outline-danger" %>
+
+<br>
+<%= render 'post_comments', comments: @post_comments %>
+<br>
+<h2>Add a comment</h2>
+  <%= form_with(model: [@post, @post_comments.build], local: false) do |f| %>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+
+  <button type="button" class="btn btn-outline-danger">Crea comment</button>
+  
+    
+
+
+<% end %>
+</div>
+

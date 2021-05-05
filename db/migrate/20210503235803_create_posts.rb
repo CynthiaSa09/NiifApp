@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.string :image_url
       t.text :content
       t.references :user, null: false
+      
 
       t.timestamps
     end

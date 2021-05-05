@@ -4,10 +4,12 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @posts = Post.order(created_at: :desc)
+    @comments = Comment.all
   end
 
   # GET /posts/1 or /posts/1.json
   def show
+    @post_comments = @post.comments
   end
 
   # GET /posts/new
@@ -61,6 +63,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :image_url, :content)
+      params.require(:post).permit(:title, :image_url, :content, :comments)
     end
 end

@@ -1,0 +1,4 @@
+var post_comments = document.querySelector('.post_comments')
+var li = document.createElement('li')
+li.innerText = '<%= @comment.body %>'
+post_comments.appendChild(li)

@@ -1,0 +1,9 @@
+<br>
+<p class="font-weight-bold">Comments</p>
+<ul class="post_comments">
+<% if comments.present? %>
+  <% comments.map do |comment| %>
+  <li><%= comment.body %></li>
+  <% end %>
+<% end %>
+</ul>
