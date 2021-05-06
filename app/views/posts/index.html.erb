@@ -1,30 +1,53 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="container text-center">NiifApp</h1>
-<p class="container text-center">Bienvenido a NiifApp pensaba para y por usted, el profesional del Area Financiera que busca una manera fácil de acceder a las Normas Internacionales de Información Financiera y sus Normas Internacionales Contables. También le invito a darse una vuelta por nuestro NiifBlog donde compartiremos noticias sobre el mundo Financiero Contable adelante......</p>
 
+
+<section id="info" class="row">
+  <div class="col-sm-12 col-md-6 img-fluid">
+    <hr>
+      <%= image_tag 'img.jpg', width: 520, height: 330%>
+  </div>
+    <hr>
+      <div id="inicio" class="Title container col-sm-12 col-md-6">
+         <h1 class="text-center text-md-left my-5">NiifApp</h1>
+        <hr>
+          <p class="text-center container text-md-left font-weight-bold">Bienvenido a NiifApp pensaba para y por usted, el profesional del Area Financiera que busca una manera fácil de acceder a las Normas Internacionales de Información Financiera y sus Normas Internacionales Contables. Le invito a darse una vuelta por nuestro NiifBlog donde compartiremos noticias sobre el mundo Financiero Contable adelante......</p>
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-outline-secondary  text-nowrap" data-toggle="tooltip" data-placement="top" title="Presiona para enviar por correo">Consulta al correo </button>
+              <button type="button" class="btn btn-outline-secondary seconde ml-3 text-nowrap" data-toggle="tooltip" data-placement="button" title="Presiona para suscribirte">Suscribete</button>    
+            </div>
+      </div>
+</section>
 <br>
 
-<div class="card-deck mb-3 bg-danger text-center text-dark">
-  <% @posts.each do |post| %>
-    <div class="card">
-    <img src="<%= post.image_url %>", width='150', height='250' class="card-img-top" alt="<%=post.title %>">
-    <div class="card-body">
-    <h5 class="card-title"><%= post.title %></h5>
-    <p class="card-text"><%= post.content %></p>
-    <%= render 'post_comments', comments: post.comments.last(2) %>   
-    <p class="card-text"><small class="text-muted"><%= post.created_at%></small></p>
-    <td><%= link_to 'Show', post %></td>
-    
-    </div>
-    </div>
-  <% end %>
-</div>
-<div class="container text-center">
-  <%= link_to 'New Post', new_post_path, class:"btn btn-outline-danger" %>
-</div>
 
-<script src="detail.js"></script>
+<section class="comentario container">
+    <hr class="hr-bottom d-none d-sm-block">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 img fluid card-deck  text-center text-dark">
+                <div class="card">
+                 <% @posts.each do |post| %>
+                  <img src="<%= post.image_url %>", width='150', height='250' class="card-img-top" alt="<%=post.title %>">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= post.title %></h5>
+                      <p class="card-text"><%= post.content %></p>
+                      <p class="card-text"><small class="text-muted"><%= post.created_at%></small></p>
+                      <%= render 'post_comments', comments: post.comments.last(2) %>   
+                      <td><%= link_to 'Show', post %></td>
+                    </div>
+                 <% end %>
+               </div>
+            <div class="container text-center">
+                <%= link_to 'New Post', new_post_path, class:"btn btn-outline-light" %>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <h3>Noticias</h3>
+          <ul></ul>
+      </div>
+    </section>  
+  </div> 
 
 
 

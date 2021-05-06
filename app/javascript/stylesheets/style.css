@@ -34,27 +34,149 @@
   color: tomato;
  }
 
-
-
 #content {
   text-align: left;
 }
 
-body {
-  height:100vh;
-}
-
 .title {
-  font-size: 3.5rem; 
-  color: tomato;
-  text-align: center;
-}
-
-.p {
-  width: 300px;
-  margin: 0 auto;
+  padding-top: 13.5px;
 }
 
 .fixed-bottom {
   z-index: 2;
+}
+
+
+div .card-deck {
+  height: 400px;
+  }
+  
+  div .card-body {
+      padding-top: 0px;
+      padding-left: 19.52px;
+      padding-right: 19.52px;
+      padding-bottom: 33.81px;
+  }
+
+  .card-deck .card {
+    margin-bottom: 26.19px;
+}
+
+p.card-body {
+  font-size: 16px;
+  font-weight: bold;
+  }
+
+  .comentario {
+    padding-top: 40px;
+    padding-left: 37px;
+    padding-right: 37px;
+    background-color: #ffffff09;
+
+}
+
+#comentario {
+    padding-bottom: 79.19px;
+    width: 1156px;
+    background-color:#ffffff02;
+}
+
+.comentario {
+    padding-top: 20.32px;
+    font-size: 20px;
+    background-color: #ffffff00;
+}
+
+hr {
+  margin-top: 7.5px;
+  margin-bottom: 17px;
+  height: 1pt;
+  background-color: #000000;
+}
+
+hr {
+  margin-bottom: 17px;
+  margin-top: 23.5px;
+  font-weight: normal;
+  justify-content: left;
+  margin-top: 24px;
+}
+
+.hr-bottom {
+  margin-top: -30px;
+}
+
+.hr-bottom {
+  margin-top: 0px;
+  margin-bottom: 38px;
+  background-color: #333a40;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+h1 {
+  font-size: 40px;
+  text-align: left;
+  color: white;
+  padding-top: 13px;
+  width: 425px;
+}
+
+.food {
+  padding-left: 37px;
+  padding-right: 37px;
+}
+
+.food {
+  padding-top: 40px;
+  padding-left: 37px;
+  padding-right: 37px;
+  margin-bottom: 68px;
+}
+
+.d-flex {
+  width: 100%;
+  margin-top: 21px;
+  font-weight: normal;
+}
+
+.d-flex {
+  width: 100%;
+  margin-top: 24px;
+  font-weight: normal;
+  justify-content: left;
+  margin-top: 24px;
+}
+
+footer {
+  font-size: 25px;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 38px;
+  padding-left: 571.5px;
+  padding-right: 571.5px;
+  padding-top: 15px;
+}
+
+footer p {
+margin: 0px;
+padding: 0px ;
+height: 46px;
+}
+
+
+footer {
+  text-align: center;
+  margin: 0;
+  padding-bottom: 38px;
+  padding-left: 19.5px;
+  padding-right: 19.5px;
+  padding-top: 41px;
+}
+
+footer p {
+margin: 0px;
+padding: 0px ;
 }

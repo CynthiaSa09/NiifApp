@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: %i[show new]
 
   # GET /posts or /posts.json
   def index
@@ -29,7 +30,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
       else
-        render 'form'
+       render 'form'
       end
   end
 
