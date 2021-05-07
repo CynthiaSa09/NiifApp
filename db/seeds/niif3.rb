@@ -1,4 +1,4 @@
-puts 'Niif2'
+puts 'Niif3'
 
 niif = Niif.create(number:3, name:'Combinación de Negocios')
 

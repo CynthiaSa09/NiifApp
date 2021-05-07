@@ -42,10 +42,6 @@
   padding-top: 13.5px;
 }
 
-.fixed-bottom {
-  z-index: 2;
-}
-
 
 div .card-deck {
   height: 400px;
@@ -53,9 +49,9 @@ div .card-deck {
   
   div .card-body {
       padding-top: 0px;
-      padding-left: 19.52px;
-      padding-right: 19.52px;
-      padding-bottom: 33.81px;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-bottom: 20px;
   }
 
   .card-deck .card {
@@ -83,7 +79,7 @@ p.card-body {
 
 .comentario {
     padding-top: 20.32px;
-    font-size: 20px;
+    font-size: 15px;
     background-color: #ffffff00;
 }
 
@@ -97,7 +93,7 @@ hr {
 hr {
   margin-bottom: 17px;
   margin-top: 23.5px;
-  font-weight: normal;
+  font-weight: bold;
   justify-content: left;
   margin-top: 24px;
 }
@@ -109,7 +105,15 @@ hr {
 .hr-bottom {
   margin-top: 0px;
   margin-bottom: 38px;
-  background-color: #333a40;
+  background-color: #00000f;
+}
+
+.hr {
+  margin-bottom: 17px;
+  margin-top: 23.5px;
+  font-weight: bold;
+  justify-content: left;
+  margin-top: 24px;
 }
 
 h1 {
@@ -124,12 +128,22 @@ h1 {
   width: 425px;
 }
 
-.food {
+ .first {
+  margin-bottom: 17px;
+  margin-top: 23.5px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 24px;
+  color: crimson;
+}
+
+
+.info {
   padding-left: 37px;
   padding-right: 37px;
 }
 
-.food {
+.info {
   padding-top: 40px;
   padding-left: 37px;
   padding-right: 37px;
@@ -139,38 +153,38 @@ h1 {
 .d-flex {
   width: 100%;
   margin-top: 21px;
-  font-weight: normal;
+  font-weight: bold;
 }
 
 .d-flex {
   width: 100%;
   margin-top: 24px;
-  font-weight: normal;
+  font-weight: bold;
   justify-content: left;
   margin-top: 24px;
 }
 
 footer {
-  font-size: 25px;
+  font-size: 18px;
   text-align: center;
   margin: 0;
-  padding-bottom: 38px;
-  padding-left: 571.5px;
-  padding-right: 571.5px;
+  padding-bottom: 29px;
+  padding-left: 471.5px;
+  padding-right: 471.5px;
   padding-top: 15px;
 }
 
 footer p {
 margin: 0px;
-padding: 0px ;
-height: 46px;
+padding: 0px;
+height: 36px;
 }
 
 
 footer {
   text-align: center;
   margin: 0;
-  padding-bottom: 38px;
+  padding-bottom: 28px;
   padding-left: 19.5px;
   padding-right: 19.5px;
   padding-top: 41px;

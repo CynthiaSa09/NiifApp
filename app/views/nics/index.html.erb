@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Nics</h1>
+<h1 class="container first">Nics</h1>
 
-
-<table class="container">
+<table class="container text-center">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Category</th>
+      <th>Nombre</th>
+      <th>Categoria</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +16,7 @@
       <tr>
         <td><%= nic.number %>.- <%= nic.name %></td>
         <td><%= nic.category.name %></td>
-        <td><%= link_to 'Show', nic %></td>
+        <td><%= link_to 'Mirar', nic, class: "btn btn-outline-danger" %></td>
       </tr>
     <% end %>
   </tbody>

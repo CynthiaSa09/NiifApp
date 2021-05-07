@@ -1,0 +1,18 @@
+<tr>
+  <td><%= card.name %></td>
+  <td><%= card.url %></td>
+
+  <td>
+  <%= card.cates.each do |cate| %>
+  <%= cate %>
+  <% end %>
+  </td>
+  <td>
+  <%= card.kinds.each do |kind| %>
+  <%= kind %><br>
+  <% end %>
+  </td>
+
+
+
+</tr>

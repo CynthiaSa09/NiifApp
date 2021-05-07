@@ -6,12 +6,15 @@ class PostsController < ApplicationController
   def index
     @posts = Post.order(created_at: :desc)
     @comments = Comment.all
+    @cards = Card.joins(:cates, :kinds).group("cates.id", "kinds.name").count
   end
 
   # GET /posts/1 or /posts/1.json
   def show
     @post_comments = @post.comments
   end
+
+
 
   # GET /posts/new
   def new

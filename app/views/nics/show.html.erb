@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
 <div class="container text-center">
 <form class="form-inline-center search-form" action="<%= search_nic_path(@nic) %>" method="GET" data-remote="true">
-  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="s">
-  <button class="btn btn-outline-danger my-2 my-ms-5 " type="submit">Search</button>
+  <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" name="s">
+  <button class="btn btn-outline-danger my-2 my-ms-5 " type="submit">Buscar</button>
     <div id="search-results">
       <ul class="results"></ul>
     </div>
 </form>
 </div>
 
+<div class="container text-center">
 <p>
   <strong>Nic:</strong>
   <%= @nic.number %>.- <%= @nic.name %>
@@ -32,6 +33,6 @@
 <% end %>
 <% end %>
 </div>
-
-<%= link_to 'Edit', edit_nic_path(@nic) %> |
-<%= link_to 'Back', nics_path %>
+<div class="container text-center">
+<%= link_to 'Atrás', nics_path, class: "btn btn-outline-danger" %>
+</div>

@@ -1,22 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Niifs</h1>
+<h1 class="container first">Niifs</h1>
 
-<table class="container">
+<table class="container text-center">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Number</th>
+      <th>Nombre</th>
+      <th>Número</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="text-center">
     <% @niifs.each do |niif| %>
       <tr>
         <td><%= niif.name %></td>
         <td><%= niif.number %></td>
-        <td><%= link_to 'Show', niif %></td>
+        <td><%= link_to 'Mirar', niif, class: "btn btn-outline-danger"%></td>
       </tr>
     <% end %>
   </tbody>

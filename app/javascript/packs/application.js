@@ -9,6 +9,10 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 import '../stylesheets/style.css'
+import Chartkick from 'chartkick'
+import Hightcharts from 'highcharts'
+window.Highcharts = Hightcharts
+
 
 Rails.start()
 Turbolinks.start()

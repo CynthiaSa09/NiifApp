@@ -2,6 +2,14 @@ Rails.application.routes.draw do
   resources :posts do 
     resources :comments
   end
+ 
+  
+   
+  resources :cates
+  resources :kinds
+  resources :cards
+
+  get 'cates/:id/api', to: 'cates#api', as: 'api'
 
   
   resources :niifs do 
@@ -22,7 +30,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     session: 'users/sessions', registrations: 'users/registrations'
   }
-  
-  
+
   root to: "posts#index"
 end

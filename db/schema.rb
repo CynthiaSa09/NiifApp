@@ -10,15 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_04_224128) do
+ActiveRecord::Schema.define(version: 2021_05_06_162224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "card_cates", force: :cascade do |t|
+    t.bigint "card_id"
+    t.bigint "cate_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["card_id"], name: "index_card_cates_on_card_id"
+    t.index ["cate_id"], name: "index_card_cates_on_cate_id"
+  end
+
+  create_table "card_kinds", force: :cascade do |t|
+    t.bigint "card_id"
+    t.bigint "kind_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["card_id"], name: "index_card_kinds_on_card_id"
+    t.index ["kind_id"], name: "index_card_kinds_on_kind_id"
+  end
+
+  create_table "cards", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cates", force: :cascade do |t|
+    t.string "name"
+    t.boolean "is_public"
+    t.bigint "cate_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cate_id"], name: "index_cates_on_cate_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -44,6 +78,12 @@ ActiveRecord::Schema.define(version: 2021_05_04_224128) do
   end
 
   create_table "countries", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "kinds", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -100,4 +140,9 @@ ActiveRecord::Schema.define(version: 2021_05_04_224128) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "card_cates", "cards"
+  add_foreign_key "card_cates", "cates"
+  add_foreign_key "card_kinds", "cards"
+  add_foreign_key "card_kinds", "kinds"
+  add_foreign_key "cates", "cates"
 end

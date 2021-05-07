@@ -2,7 +2,7 @@
 <div class="container text-center">
 
 <p>
-  <strong>Title:</strong>
+  <strong>Titulo:</strong>
   <%= @post.title %>
 </p>
 
@@ -11,7 +11,7 @@
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>Contenido:</strong>
   <%= @post.content %>
 </p>
 
@@ -21,7 +21,7 @@
 <br>
 <%= render 'post_comments', comments: @post_comments %>
 <br>
-<h2>Add a comment</h2>
+<h2>Agrega un comentario</h2>
   <%= form_with(model: [@post, @post_comments.build], local: false) do |f| %>
   <p>
     <%= f.label :body %><br>

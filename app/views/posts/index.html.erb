@@ -3,7 +3,7 @@
 
 
 <section id="info" class="row">
-  <div class="col-sm-12 col-md-6 img-fluid">
+  <div class="col-sm-12 col-md-6 img-fluid card-deck">
     <hr>
       <%= image_tag 'img.jpg', width: 520, height: 330%>
   </div>
@@ -11,7 +11,7 @@
       <div id="inicio" class="Title container col-sm-12 col-md-6">
          <h1 class="text-center text-md-left my-5">NiifApp</h1>
         <hr>
-          <p class="text-center container text-md-left font-weight-bold">Bienvenido a NiifApp pensaba para y por usted, el profesional del Area Financiera que busca una manera fácil de acceder a las Normas Internacionales de Información Financiera y sus Normas Internacionales Contables. Le invito a darse una vuelta por nuestro NiifBlog donde compartiremos noticias sobre el mundo Financiero Contable adelante......</p>
+          <p class="text-center container text-md-left">Bienvenido a NiifApp pensaba para y por usted, el profesional del Area Financiera que busca una manera fácil de acceder a las Normas Internacionales de Información Financiera y sus Normas Internacionales Contables. Le invito a darse una vuelta por nuestro NiifBlog donde compartiremos noticias sobre el mundo Financiero Contable adelante......</p>
             <div class="d-flex justify-content-center">
               <button type="button" class="btn btn-outline-secondary  text-nowrap" data-toggle="tooltip" data-placement="top" title="Presiona para enviar por correo">Consulta al correo </button>
               <button type="button" class="btn btn-outline-secondary seconde ml-3 text-nowrap" data-toggle="tooltip" data-placement="button" title="Presiona para suscribirte">Suscribete</button>    
@@ -21,33 +21,93 @@
 <br>
 
 
-<section class="comentario container">
+<section id="comentario" class=" container">
     <hr class="hr-bottom d-none d-sm-block">
       <div class="row">
-        <div class="col-sm-12 col-md-6 img fluid card-deck  text-center text-dark">
-                <div class="card">
+          <div class="col-sm-12 col-md-6 img fluid card-deck text-dark">
+                <div class="card container text-left">
+                  <div class="text-center container">
+                    <%= link_to 'New Post', new_post_path, class:"btn btn-outline-danger" %>
+                  </div>
                  <% @posts.each do |post| %>
                   <img src="<%= post.image_url %>", width='150', height='250' class="card-img-top" alt="<%=post.title %>">
-                    <div class="card-body">
+                    <div class="card-body text-center">
                       <h5 class="card-title"><%= post.title %></h5>
                       <p class="card-text"><%= post.content %></p>
                       <p class="card-text"><small class="text-muted"><%= post.created_at%></small></p>
                       <%= render 'post_comments', comments: post.comments.last(2) %>   
-                      <td><%= link_to 'Show', post %></td>
+                      <td><%= link_to 'Mirar', post, class:"btn btn-outline-danger" %></td>
                     </div>
                  <% end %>
-               </div>
-            <div class="container text-center">
-                <%= link_to 'New Post', new_post_path, class:"btn btn-outline-light" %>
-        </div>
-      </div>
+             </div>   
+           </div>
+      <div class="col-sm-12 col-md-6 text-center">
+        <p>Gráfico Financiero</p>
+         <%= bar_chart @cards %>
+         <p>El movimiento anual del mercado bursátil en Asia el último año.</p>
+        <td><%= link_to 'Show', cards_path %></td>
+    <hr>
+    <br>
+    <br>
 
-      <div class="col-sm-12 col-md-6">
-        <h3>Noticias</h3>
-          <ul></ul>
-      </div>
-    </section>  
-  </div> 
+    <div class="news-announcements home-widget">
+    <div class="content-header">
+    <h3>Noticias</h3>
 
+    <ul>
+      
+      <li>
+        <%= link_to 'S&P Dow Jones Indices lanza nueva serie de Índices de Criptomonedas, incluyendo el S&P Bitcoin Index', asset_path('1340361_mar21mktcapguid-03-19-2021-spanish.pdf'), target: '_blank' %>
+        <span>May 04, 2021 at 8:30 AM EDT</span>
+      </li>
+      <hr>
+      
+      <li>
+       <%= link_to 'S&P Dow Jones Indices Anuncia Cambios en la  Composición del S&P 500', asset_path('1358762_5var-6egov-202104-spanish.pdf'), target: '_blank' %>
+       <span>April 16, 2021 at 10:26 AM EDT</span>
+      </li>
+      <hr>
+      
+      <li>
+      <%= link_to 'S&P Dow Jones Indices Anuncia Actualizaciones a las directrices por Capitalización de Mercado del S&P Composite 1500', asset_path('20210504-spdji-digital-markets-launch-es.pdf'), target: '_blank' %>
+       <span>March 19, 2021 at 4:20 PM EDT</span>
+      </li>
+      <hr>
+
+      <li>
+      <%= link_to 'S&P Dow Jones Indices Anuncia Cambios en la  Composición del S&P 500', asset_path('1336561_march2021-5146-shuf-pr-20210312-spanish-1.pdf'), target: '_blank'%>
+       <span>March 12, 2021 at 9:20 PM EST</span>
+      </li>
+      <hr>
+    
+       <li>
+      <%= link_to 'Lo que debes de saber sobre normas', asset_path('noticias-niif-marzo-2018.pdf'), target: '_blank'%>
+       <span>March 30, 2018 at 8:00 PM EST</span>
+      </li>
+
+      <li>
+      <%= link_to 'Noticias de Normas de Información Financiera', asset_path('noticias-niif-2020.pdf'), target: '_blank'%>
+       <span>October 01, 2020 at 11:00 PM EST</span>
+      </li>
+      <hr>
+
+
+    </ul>
+      </div>
+      </div>
+      <br>
+
+    <div class="clearfix"></div>
+
+     <%= link_to 'Más', posts_path, class: "btn btn-outline-danger" %>
+    <div class="column1">
+    </div>
+  </div>
+  </div>
+  </div>
+</section>  
+
+
+   
 
 

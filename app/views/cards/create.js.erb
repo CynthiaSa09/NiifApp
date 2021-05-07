@@ -1,0 +1,2 @@
+$("form")[0].reset();
+$("#cards").append("<%= escape_javascript(render partial: 'card' locals: {card: @card}) %>");
