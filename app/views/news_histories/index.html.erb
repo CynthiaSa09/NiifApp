@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+
+<form class="form-inline-center container">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search"
+      aria-label="Search" name="content">
+      <div class="text-center">
+      <button class="btn btn-outline-danger my-2 my-ms-5"
+      type="submit">Search</button>
+      </div>
+  </form>    
+
+<h1>News Histories</h1>
+  
+  <tbody>
+    <% @news_histories.each do |news_history| %>
+      <tr>
+        <td><%= news_history.title %></td>
+        <td><%= news_history.content %></td>
+        <td><%= link_to 'Show', news_history %></td>
+        <td><%= link_to 'Edit', edit_news_history_path(news_history) %></td>
+        <td><%= link_to 'Destroy', news_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class=" container home-widget">
+  <div class="content-header">
+    
+    <ul>
+     <li>
+      <%= link_to 'Noticias de Normas de Información Financiera', asset_path('noticias-niif-2020.pdf'), class:"btn btn-outline-danger",  target: '_blank'%>
+       <span>October 01, 2020 at 11:00 PM EST</span>
+      </li>
+      <hr>
+      <li>
+        <%= link_to 'S&P Dow Jones Indices lanza nueva serie de Índices de Criptomonedas, incluyendo el S&P Bitcoin Index', asset_path('1340361_mar21mktcapguid-03-19-2021-spanish.pdf'), class:"btn btn-outline-danger", target: '_blank' %>
+        <span>May 04, 2021 at 8:30 AM EDT</span>
+      </li>
+      <hr>
+      <li>
+        <%= link_to 'S&P Dow Jones Indices Anuncia Actualizaciones a las directrices por Capitalización de Mercado del S&P Composite 1500', asset_path('20210504-spdji-digital-markets-launch-es.pdf'), class:"btn btn-outline-danger", target: '_blank' %>
+        <span>March 19, 2021 at 4:20 PM EDT</span>
+      </li>
+      <hr>
+      <li>
+      <%= link_to 'Emision del decreto anual de la actualización normaativa en Colombia', asset_path('2021-0009-Emision-decreto-anual-de-actualizacion-normativa-en-Colombia.pdf'), class:"btn btn-outline-danger", target: '_blank'%>
+       <span>March 16, 2021 at 3:42 PM EDT</span>
+      </li>
+      <hr>
+      <li>
+      <%= link_to 'Un afondo de las implicaciones de los efectos del coronavirus', asset_path('A-fondo-implicaciones-contables-de-los-efectos-del-coronavirus.pdf'), class:"btn btn-outline-danger", target: '_blank'%>
+       <span>March 19, 2020 at 1:12 AM EDT</span>
+      </li>
+      <hr>
+       <li>
+      <%= link_to 'Boletín Mensual de Marzo Niif 2021', asset_path('Boletín_Marzo_2021.pdf'), class:"btn btn-outline-danger", target: '_blank'%>
+       <span>March 12, 2021 at 9:20 PM EST</span>
+      </li>
+      <hr>
+    </ul>
+  </div>
+  </div>
+  <br>
+
+<div class="text-center">
+<%= link_to 'New News History', new_news_history_path, class: "btn btn-outline-danger" %>
+</div>

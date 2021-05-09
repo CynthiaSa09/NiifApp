@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
-
 <section id="info" class="row">
   <div class="col-sm-12 col-md-6 img-fluid card-deck">
     <hr>
@@ -22,81 +20,66 @@
 
 
 <section id="comentario" class=" container">
-    <hr class="hr-bottom d-none d-sm-block">
-      <div class="row">
-          <div class="col-sm-12 col-md-6 img fluid card-deck text-dark">
-                <div class="card container text-left">
-                  <div class="text-center container">
-                    <%= link_to 'New Post', new_post_path, class:"btn btn-outline-danger" %>
-                  </div>
-                 <% @posts.each do |post| %>
-                  <img src="<%= post.image_url %>", width='150', height='250' class="card-img-top" alt="<%=post.title %>">
-                    <div class="card-body text-center">
-                      <h5 class="card-title"><%= post.title %></h5>
-                      <p class="card-text"><%= post.content %></p>
-                      <p class="card-text"><small class="text-muted"><%= post.created_at%></small></p>
-                      <%= render 'posts/post_comments', comments: post.comments.last(2) %>   
-                      <td><%= link_to 'Mirar', post, class:"btn btn-outline-danger" %></td>
-                    </div>
-                 <% end %>
-             </div>   
-           </div>
+  <hr class="hr-bottom d-none d-sm-block">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 img fluid card-deck text-dark">
+        <div class="card container text-left">
+            <% @posts.each do |post| %>
+              <img src="<%= post.image_url %>", width='150', height='250' class="card-img-top" alt="<%=post.title %>">
+            <div class="card-body text-center">
+              <h5 class="card-title"><%= post.title %></h5>
+              <p class="card-text"><%= post.content %></p>
+              <p class="card-text"><small class="text-muted"><%= post.created_at%></small></p>
+              <%= render 'posts/post_comments', comments: post.comments.last(2) %>   
+              <td><%= link_to 'Mirar', post, class:"btn btn-outline-danger" %></td>
+            </div>
+          <% end %>
+          </div>   
+        </div>
       <div class="col-sm-12 col-md-6 text-center">
         <p class="grafic">Gráfico Financiero</p>
-         <%= bar_chart @cards %>
-         <br>
-         <p class="grafic">El movimiento anual del mercado bursátil en Asia el último año. Como se representa en el gráfico los colores representan los Tipos diferentes de Nombres que representan la Banca y sus diferentes categorias de cuentas.</p>
+        <%= bar_chart @cards %>
+        <br>
+        <p class="grafic">El movimiento anual del mercado bursátil en Asia el último año. Como se representa en el gráfico los colores representan los Tipos diferentes de Nombres que representan la Banca y sus diferentes categorias de cuentas.</p>
         <td><%= link_to 'Show', cards_path, class:"grafic" %></td>
-    <hr>
+      <hr>
     <br>
-    <br>
-
-    <div class="news home-widget">
-    <div class="content-header">
-    <h3>Noticias</h3>
-
-    <ul>
-      
-      <li>
-        <%= link_to 'S&P Dow Jones Indices lanza nueva serie de Índices de Criptomonedas, incluyendo el S&P Bitcoin Index', asset_path('1340361_mar21mktcapguid-03-19-2021-spanish.pdf'), class:"btn btn-outline-danger", target: '_blank' %>
-        <span>May 04, 2021 at 8:30 AM EDT</span>
-      </li>
-      <hr>
-      
-      <li>
-       <%= link_to 'S&P Dow Jones Indices Anuncia Cambios en la  Composición del S&P 500', asset_path('1358762_5var-6egov-202104-spanish.pdf'), class:"btn btn-outline-danger",  target: '_blank' %>
-       <span>April 16, 2021 at 10:26 AM EDT</span>
-      </li>
-      <hr>
-      
-      <li>
-      <%= link_to 'S&P Dow Jones Indices Anuncia Actualizaciones a las directrices por Capitalización de Mercado del S&P Composite 1500', asset_path('20210504-spdji-digital-markets-launch-es.pdf'), class:"btn btn-outline-danger", target: '_blank' %>
-       <span>March 19, 2021 at 4:20 PM EDT</span>
-      </li>
-      <hr>
-
-      <li>
-      <%= link_to 'S&P Dow Jones Indices Anuncia Cambios en la  Composición del S&P 500', asset_path('1336561_march2021-5146-shuf-pr-20210312-spanish-1.pdf'), class:"btn btn-outline-danger", target: '_blank'%>
-       <span>March 12, 2021 at 9:20 PM EST</span>
-      </li>
-      <hr>
     
-      
+    
+      <div class="content-header">
+      <h3>Noticias</h3>
+        <ul>
+          <li>
+            <%= link_to 'Lo que debes de saber sobre normas', asset_path('noticias-niif-marzo-2018.pdf'), class:"btn btn-outline-danger", target: '_blank'%>
+            <span>March 30, 2018 at 8:00 PM EST</span>
+          </li>
+        <hr>
+          <li>
+            <%= link_to 'S&P Dow Jones Indices Anuncia Cambios en la  Composición del S&P 500', asset_path('1358762_5var-6egov-202104-spanish.pdf'), class:"btn btn-outline-danger",  target: '_blank' %>
+            <span>April 16, 2021 at 10:26 AM EDT</span>
+          </li>
+        <hr>
+        <li>
+          <%= link_to 'Análisis de la aplicación de las NIIF y NICSP aplicada a los pasivos corrientes (Resolución 414)', asset_path('2020_análisis_aplicación_niif.pdf'), class:"btn btn-outline-danger", target: '_blank'%>
+          <span>arch 30, 2018 at 8:00 PM EST</span>
+        </li>
+        <hr>
+        
+        <li>
+          <%= link_to 'Analisis de Deloitte primer semestre del 2019', asset_path('Deloitte-ES-Audit-NewsletterContable-primer-semestre-2019.pdf'), class:"btn btn-outline-danger", target: '_blank'%>
+          <span>March 19, 2021 at 4:20 PM EDT</span>
+        </li>
+      <hr>
 
-
-    </ul>
-      </div>
-      </div>
-      <br>
-
-    <div class="clearfix"></div>
-
-     <%= link_to 'Más', '#', class: "btn btn-outline-danger" %>
-    <div class="column1">
+           <li>
+            <%= link_to 'S&P Dow Jones Indices Anuncia Actualizaciones a las directrices por Capitalización de Mercado del S&P Composite 1500', asset_path('20210504-spdji-digital-markets-launch-es.pdf'), class:"btn btn-outline-danger", target: '_blank' %>
+            <span>March 19, 2021 at 4:20 PM EDT</span>
+          </li>
+        <hr>
+           <%= link_to 'Más', news_histories_path, class: "btn btn-outline-danger" %>
+      </ul>
     </div>
-  </div>
-  </div>
-  </div>
+  <br>
 </section>  
 
 <div class="row row-cols-1 row-cols-md-3">

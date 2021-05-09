@@ -1,23 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<section id="comentario" class="container">
-  <div class="row">
-    <div class="col-sm-12 col-md-6 img fluid card-deck text-dark">
-      <div class="card container text-left">
-        <div class="text-center container">
-          <%= link_to 'New Post', new_post_path, class:"btn btn-outline-danger" %>
-        </div>
+<div class="card mb-5 text-center container" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-6 container">
         <% @posts.each do |post| %>
-        <img src="<%= post.image_url %>", width='150', height='250' class="card-img-top" alt="<%=post.title %>">
-          <div class="card-body text-center">
-            <h5 class="card-title"><%= post.title %></h5>
-            <p class="card-text"><%= post.content %></p>
-            <p class="card-text"><small class="text-muted"><%= post.created_at%></small></p>
-            <%= render 'post_comments', comments: post.comments.last(2) %>   
-            <td><%= link_to 'Mirar', post, class:"btn btn-outline-danger" %></td>
-          </div>
-        <% end %>
+        <img src="<%= post.image_url %>" class="card-img-top" alt="<%=post.title %>">
+    </div>
+    <div class="col-md-12">
+      <div class="card-body">
+        <h5 class="card-title"><%= post.title %></h5>
+        <p class="card-text"><%= post.content %></p>
+        <p class="card-text"><small class="text-muted"><%= post.created_at%></small></p>
+        <%= render 'post_comments', comments: post.comments.last(2) %>   
+        <td><%= link_to 'Mirar', post, class:"btn btn-outline-danger" %></td>
       </div>
+        <% end %>
     </div>
   </div>
-</section>
+</div>
+<div class="text-center">
+<%= link_to 'New Post', new_post_path, class:"btn btn-outline-danger" %>
+</div>            
+  
+
