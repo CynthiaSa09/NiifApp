@@ -1,6 +1,7 @@
 class NicsController < ApplicationController
   before_action :set_nic, only: %i[ show edit update destroy search ]
   before_action :authenticate_user!
+  skip_before_action :verify_authenticity_token, only: [:detail]
 
   # GET /nics or /nics.json
   def index
@@ -65,6 +66,15 @@ class NicsController < ApplicationController
       format.js
     end
   end
+
+  def detail
+    @content_detail = @nic.contents.find_by(number: params[:detail_id])
+
+    respond_to do |format|
+      format.js { render partial: 'shared/detail' }
+    end
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

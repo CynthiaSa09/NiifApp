@@ -21,7 +21,7 @@
 </p>
 </div>
 
-<div id="content" class="container">
+<div id="content" class="container text-left">
 <% @contents.map do |content| %>
 <% if content.text.present? %>
   <%= render 'shared/tag_for', content: content, result_scope: 'niif' do %>
@@ -29,7 +29,7 @@
     <%= "#{content.number}.-" %>
     <% end %>
 
-    <%= content.text %>
+    <%= content.text.html_safe %>
   <% end %>
 <% end %>
 <% end %>

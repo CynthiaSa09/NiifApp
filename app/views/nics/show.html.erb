@@ -4,6 +4,7 @@
   <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" name="s">
   <button class="btn btn-outline-danger my-2 my-ms-5 " type="submit">Buscar</button>
     <div id="search-results">
+    
       <ul class="results"></ul>
     </div>
 </form>
@@ -20,15 +21,15 @@
   <%= @nic.category_id %>
 </p>
 
-<div id="content" class="container">
+<div id="content" class="container text-left">
 <% @contents.map do |content| %>
 <% if content.text.present? %>
-  <%= render 'shared/tag_for', content: content do %>
-    <% if content.number.present? %>
+  <%= render 'shared/tag_for', content: content, result_scope: 'nic' do %>    
+  <% if content.number.present? %>
     <%= "#{content.number}.-" %>
     <% end %>
 
-    <%= content.text %>
+    <%= content.text.html_safe %>
   <% end %>
 <% end %>
 <% end %>

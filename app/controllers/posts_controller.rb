@@ -5,8 +5,6 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @posts = Post.order(created_at: :desc)
-    @comments = Comment.all
-    @cards = Card.joins(:cates, :kinds).group("cates.id", "kinds.name").count
   end
 
   # GET /posts/1 or /posts/1.json
@@ -56,6 +54,14 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def file
+    @files = File.find(params[:id])
+    
+    respond_to do |format|
+      format.html { render template: 'file' }
     end
   end
 

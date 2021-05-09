@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   resources :posts do 
     resources :comments
   end
- 
-  
    
   resources :cates
   resources :kinds
@@ -15,6 +13,7 @@ Rails.application.routes.draw do
   resources :niifs do 
     member do
       get 'search', as: 'search'
+      get 'detail/:detail_id', to: 'niifs#detail', as: 'niif_detail'
     end
   end
   resources :nics do
@@ -24,6 +23,7 @@ Rails.application.routes.draw do
     
     member do
       get 'search', as: 'search'
+      get 'detail/:detail_id', to: 'nics#detail', as: 'nic_detail'
     end
   end
   
@@ -31,5 +31,5 @@ Rails.application.routes.draw do
     session: 'users/sessions', registrations: 'users/registrations'
   }
 
-  root to: "posts#index"
+  root to: "home#index"
 end

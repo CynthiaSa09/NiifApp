@@ -1,6 +1,7 @@
 class NiifsController < ApplicationController
-  before_action :set_niif, only: %i[ show edit update destroy search ]
+  before_action :set_niif, only: %i[ show edit update destroy search detail ]
   before_action :authenticate_user!
+  skip_before_action :verify_authenticity_token, only: [:detail]
 
   # GET /niifs or /niifs.json
   def index
@@ -63,6 +64,14 @@ class NiifsController < ApplicationController
 
     respond_to do |format|
       format.js
+    end
+  end
+
+  def detail
+    @content_detail = @niif.contents.find_by(number: params[:detail_id].downcase)
+
+    respond_to do |format|
+      format.js { render partial: 'shared/detail' }
     end
   end
 

@@ -1,7 +1,6 @@
-<% result_scope = result_scope || 'nic' %>
+<% result_scope = result_scope || 'nic' 'niif' %>
 
-<<%= content.label %>
-  <%= "id=#{result_scope}-#{content.order}" %>
->
-<%= yield %>
-</<%= content.label %>>
+<%= content_tag content.label.to_sym, id: "#{result_scope}-#{content.order}" do %>
+  <%= yield %>
+<% end %>
+

@@ -8,6 +8,8 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+import content_detail from '../src/content_detail'
+
 import '../stylesheets/style.css'
 import Chartkick from 'chartkick'
 import Hightcharts from 'highcharts'
@@ -17,3 +19,7 @@ window.Highcharts = Hightcharts
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+document.addEventListener("turbolinks:load", function() {
+  content_detail()
+});
