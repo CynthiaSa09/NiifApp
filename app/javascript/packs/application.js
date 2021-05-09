@@ -23,3 +23,8 @@ ActiveStorage.start()
 document.addEventListener("turbolinks:load", function() {
   content_detail()
 });
+
+
+
+
+  

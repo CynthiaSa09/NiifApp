@@ -1,5 +1,6 @@
 class NewsHistoriesController < ApplicationController
   before_action :set_news_history, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /news_histories or /news_histories.json
   def index
