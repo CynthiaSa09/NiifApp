@@ -12,17 +12,19 @@
     <%= f.label :last_name %><br />
     <%= f.text_field :last_name, autocomplete: "last_name" %>
   </div>
-
-
-  <div class="field text-center container">
-    <%= f.label :country_id %>
-    <%= f.country_select(:country, {selected: @user.country}, {class: "form-control"}) %>
-  </div>
+   <br>
 
   <div class="field">
-    <%= f.label :profession_id %><br />
-    <%= f.text_field :profession_id, autocomplete: "profession" %>
+    <%= f.label :country_id %>
+    <%= f.select(:country_id, Country.pluck(:name, :id), class: "form-control") %>
+  </div>
+  <br>
+
+  <div class="field">
+    <%= f.label :profession_id %>
+    <%= f.select(:profession_id, Profession.pluck(:name, :id), class: "form-control") %>
     </div>
+     <br>
     
   <div class="field">
     <%= f.label :email %><br />
@@ -42,9 +44,8 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-<br>
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class:"btn btn-danger" %>
   </div>
 <% end %>
 

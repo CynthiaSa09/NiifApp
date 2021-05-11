@@ -25,13 +25,12 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    content = params[:post][:content].gsub('spoiler',' ')
-    @post = Post.new(content: content, title: params[:post][:title], image_url: params[:post][:image_url])
+    @post = Post.new(post_params.merge(user: current_user))
 
     if @post.save
       redirect_to posts_path
       else
-       render 'form'
+       render :new
       end
   end
 

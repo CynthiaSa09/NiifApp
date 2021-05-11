@@ -6,17 +6,46 @@
       <%= image_tag 'img.jpg', width: 520, height: 330%>
   </div>
     <hr>
+    
       <div id="inicio" class="Title container col-sm-12 col-md-6">
          <h1 class="text-center text-md-left my-5">NiifApp</h1>
+         <% if current_user %>
+         <h2 class="danger text-center">
+         <%= flash[:alert] = "Welcome" %></h2>
+         </button>
+         <% end %>
         <hr>
-          <p class="text-center container text-md-left">Bienvenido a NiifApp pensaba para y por usted, el profesional del Area Financiera que busca una manera fácil de acceder a las Normas Internacionales de Información Financiera y sus Normas Internacionales Contables. Le invito a darse una vuelta por nuestro NiifBlog donde compartiremos noticias sobre el mundo Financiero Contable adelante......</p>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="btn btn-outline-secondary  text-nowrap" data-toggle="tooltip" data-placement="top" title="Presiona para enviar por correo">Consulta al correo </button>
-              <button type="button" class="btn btn-outline-secondary seconde ml-3 text-nowrap" data-toggle="tooltip" data-placement="button" title="Presiona para suscribirte">Suscribete</button>    
-            </div>
+
+
+
+        
+   
+   <div class="container">
+    <div class="accordion" id="accordionExample">
+      <div class="practice">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Importante
+            </button>
+          </h2>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+          Bienvenido a NiifApp pensaba para y por usted, el profesional del Area Financiera que busca una manera fácil de acceder a las Normas Internacionales de Información Financiera y sus Normas Internacionales Contables. Le invito a darse una vuelta por nuestro NiifBlog donde compartiremos noticias sobre el mundo Financiero Contable adelante......
+          </div>
+        </div>
       </div>
+  
+    <div class="d-flex justify-content-center">
+      <button type="button" class="btn btn-outline-secondary  text-nowrap" data-toggle="tooltip" data-placement="top" title="Presiona para enviar por correo">Consulta al correo </button>
+      <button type="button" class="btn btn-outline-secondary seconde ml-3 text-nowrap" data-toggle="tooltip" data-placement="button" title="Presiona para suscribirte">Suscribete</button>          
+    </div>  
+  </div>
+  <br>
+
 </section>
-<br>
+
 
 
 <section id="comentario" class=" container">
@@ -36,12 +65,12 @@
           <% end %>
           </div>   
         </div>
-      <div class="col-sm-12 col-md-6 text-center">
-        <p class="grafic">Gráfico Financiero</p>
-        <%= bar_chart @cards %>
+        <div class=" container text-center col-sm-12 col-md-6">
+        <p class="grafic">Gráfico Distribución de Categorias de Nic</p>
+        <%= bar_chart @nics %>
         <br>
-        <p class="grafic">El movimiento anual del mercado bursátil en Asia el último año. Como se representa en el gráfico los colores representan los Tipos diferentes de Nombres que representan la Banca y sus diferentes categorias de cuentas.</p>
-        <td><%= link_to 'Show', cards_path, class:"grafic" %></td>
+        <p class="grafic">En el presente gráfico podemos ver la distribución de las Categorias en donde 11 de las mismas corresponden a la categoria 1, mientras que 4 unicamente corresponden a la categoria 2, 2 corresponden a la categoria de flujo de efectivo, 2 a la categoria 4 y 6 a la categoria 5.</p>
+        <td><%= link_to 'Show', categories_path, class:"grafic" %></td>
       <hr>
     <br>
     
@@ -55,12 +84,12 @@
           </li>
         <hr>
           <li>
-            <%= link_to 'S&P Dow Jones Indices Anuncia Cambios en la  Composición del S&P 500', asset_path('1358762_5var-6egov-202104-spanish.pdf'), class:"btn btn-outline-danger",  target: '_blank' %>
+            <%= link_to 'S&P Dow Jones Indices Anuncia Cambios en la Composición del S&P 500', asset_path('1358762_5var-6egov-202104-spanish.pdf'), class:"btn btn-outline-danger",  target: '_blank' %>
             <span>April 16, 2021 at 10:26 AM EDT</span>
           </li>
         <hr>
         <li>
-          <%= link_to 'Análisis de la aplicación de las NIIF y NICSP aplicada a los pasivos corrientes (Resolución 414)', asset_path('2020_análisis_aplicación_niif.pdf'), class:"btn btn-outline-danger", target: '_blank'%>
+          <%= link_to 'Análisis de la aplicación de las NIIF y NICSP aplicada a los pasivos corrientes (Resolución 414)', asset_path('2020_analisis_aplicacion_niif.pdf'), class:"btn btn-outline-danger", target: '_blank'%>
           <span>arch 30, 2018 at 8:00 PM EST</span>
         </li>
         <hr>
@@ -69,12 +98,12 @@
           <%= link_to 'Analisis de Deloitte primer semestre del 2019', asset_path('Deloitte-ES-Audit-NewsletterContable-primer-semestre-2019.pdf'), class:"btn btn-outline-danger", target: '_blank'%>
           <span>March 19, 2021 at 4:20 PM EDT</span>
         </li>
-      <hr>
+        <hr>
 
-           <li>
-            <%= link_to 'S&P Dow Jones Indices Anuncia Actualizaciones a las directrices por Capitalización de Mercado del S&P Composite 1500', asset_path('20210504-spdji-digital-markets-launch-es.pdf'), class:"btn btn-outline-danger", target: '_blank' %>
-            <span>March 19, 2021 at 4:20 PM EDT</span>
-          </li>
+        <li>
+          <%= link_to 'S&P Dow Jones Indices Anuncia Actualizaciones a las directrices por Capitalización de Mercado del S&P Composite 1500', asset_path('20210504-spdji-digital-markets-launch-es.pdf'), class:"btn btn-outline-danger", target: '_blank' %>
+          <span>March 19, 2021 at 4:20 PM EDT</span>
+        </li>
         <hr>
            <%= link_to 'Más', news_histories_path, class: "btn btn-outline-danger" %>
       </ul>
@@ -82,7 +111,16 @@
   <br>
 </section>  
 
+<hr>
+ <div class="container text-center">
+  <p class="grafic">Gráfico Categorias de Nics</p>
+    <%= bar_chart @cards %>
+    <br>
+    <p class="grafic">El movimiento anual del mercado bursátil en Asia el último año. Como se representa en el gráfico los colores representan los Tipos diferentes de Nombres que representan la Banca y sus diferentes categorias de cuentas.</p>
+    <td><%= link_to 'Show', cards_path, class:"grafic" %></td>
+    </div>
 
+<hr>
 <div class="row row-cols-1 row-cols-md-3">
   <div class="col mb-4">
     <div class="card h-100">

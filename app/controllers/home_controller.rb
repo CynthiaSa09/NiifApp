@@ -4,7 +4,7 @@ class HomeController < ApplicationController
     @comments = Comment.all
     @cards = Card.joins(:cates, :kinds).group("cates.id", "kinds.name").count
     @news_histories = NewsHistory.all
+    @nics = Nic.group(:category_id).group("category_id").count
+   # @nics = Nic.group("number", "category_id").count
   end
-
-
 end

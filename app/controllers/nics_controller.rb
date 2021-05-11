@@ -5,7 +5,7 @@ class NicsController < ApplicationController
 
   # GET /nics or /nics.json
   def index
-    @nics = Nic.all
+    @nics = Nic.all.sort_by(&:number)
   end
 
   # GET /nics/1 or /nics/1.json

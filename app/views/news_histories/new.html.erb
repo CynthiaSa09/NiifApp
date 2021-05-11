@@ -1,5 +1,7 @@
-<h1>New News History</h1>
+<h1 class="container">New News History</h1>
 
 <%= render 'form', news_history: @news_history %>
-
-<%= link_to 'Back', news_histories_path %>
+<br>
+<div class="text-center">
+<%= link_to 'Back', news_histories_path, class: "btn btn-outline-danger" %>
+</div>

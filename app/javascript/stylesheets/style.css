@@ -145,13 +145,6 @@ hr {
   background-color: #00000f;
 }
 
-.grafic {
-  font-size: 14px;
-  font-family: "Lobster", cursive;
-  justify-content: center;
-  color: crimson;
-}
-
 ul {
   list-style: none;
   padding: 0;
@@ -204,7 +197,7 @@ h1 {
   text-align: center;
 }
 
- .first {
+.first {
   margin-bottom: 17px;
   margin-top: 23.5px;
   font-weight: bold;
@@ -215,9 +208,9 @@ h1 {
 
 a:visited {
   color: #666;
- }
+}
 
- #notice {
+#notice {
   color: crimson; 
 }
 
@@ -263,7 +256,6 @@ footer p {
   height: 36px;
 }
 
-
 footer {
   text-align: center;
   margin: 0;
@@ -277,3 +269,19 @@ footer p {
   margin: 0px;
   padding: 0px ;
 }
+  
+.grafic {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Itim', cursive;
+  color: crimson;
+  }
+
+  .danger {
+    color: crimson;
+  }
+
+  .accordion {
+    background-color:#343a40;
+    color: white;
+  }

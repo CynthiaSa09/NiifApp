@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :comments
   end
    
+  resources :categories
   resources :cates
   resources :kinds
   resources :cards

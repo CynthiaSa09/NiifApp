@@ -5,7 +5,7 @@ class NiifsController < ApplicationController
 
   # GET /niifs or /niifs.json
   def index
-    @niifs = Niif.all
+    @niifs = Niif.all.sort_by(&:number)
   end
 
   # GET /niifs/1 or /niifs/1.json
