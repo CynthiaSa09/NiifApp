@@ -3,11 +3,11 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+Characteristics
 
-* Ruby version
+* Ruby version 2.7.2
 
-* System dependencies
+* System dependencies 
 
 * Configuration
 
@@ -15,7 +15,7 @@ Things you may want to cover:
 
 * Database initialization
 
-* How to run the test suite
+* Run Heroku https://agile-fortress-68289.herokuapp.com/ user:cinthya@cinthya.com password:123456
 
 * Services (job queues, cache servers, search engines, etc.)
 
