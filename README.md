@@ -1,19 +1,18 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ 
+ NiifApp Las normas a un solo click
 
 Characteristics
 
 * Ruby version 2.7.2
 
-* System dependencies 
+*  
 
 * Configuration
 
 * Database creation
 
-* Database initialization
+* 
 
 * Run Heroku https://agile-fortress-68289.herokuapp.com/ user:cinthya@cinthya.com password:123456
 
