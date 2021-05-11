@@ -16,6 +16,7 @@
 #
 default: &default
   adapter: postgresql
+  database: NiifApp_production
   encoding: unicode
   host: localhost
   username: cynthia
