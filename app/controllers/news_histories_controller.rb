@@ -4,7 +4,11 @@ class NewsHistoriesController < ApplicationController
 
   # GET /news_histories or /news_histories.json
   def index
-    @news_histories = NewsHistory.all
+    if params[:content].present?
+      @news_histories = NewsHistory.where("title ilike ?", "%#{ params[:content] }%").page(params[:page]).per(5)
+    else
+      @news_histories = NewsHistory.all
+    end
   end
 
   # GET /news_histories/1 or /news_histories/1.json

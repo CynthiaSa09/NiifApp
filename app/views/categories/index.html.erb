@@ -1,24 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="container first">Nics</h1>
+<h1 class="container first">Categorias</h1>
 
-<table class="container text-center">
+<table class="second container-fluid">
   <thead>
     <tr>
       <th>Categoria</th>
-      <th colspan="3"></th>
+      <th>Number </th>
+    
     </tr>
   </thead>
 
   <tbody>
-    <% @categories.each do |cate| %>
+    <% @categories.each do |category| %>
       <tr>
-        <td><%= cate.name %></td>
+        <td><%= category.name %></td>
+        <td><%= category.nics.size %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
 
 <div class="text-center">

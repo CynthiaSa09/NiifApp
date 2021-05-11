@@ -14,6 +14,12 @@
   </div>
  <br>
 
+ <div class="field">
+    <%= f.label :profile_photo %><br />
+    <%= f.text_field :profile_photo, autocomplete: "Picture" %>
+  </div>
+   <br>
+
   <div class="field">
     <%= f.label :country_id %>
     <%= f.select(:country_id, Country.pluck(:name, :id), class: "form-control") %>

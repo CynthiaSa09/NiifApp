@@ -36,13 +36,11 @@ body {
 }
 
 #search-results .result a:hover {
-  
   color: rgb(36, 6, 1);
  }
 
 #content {
-  text-align: left;
-  
+  text-align: left;  
 }
 
 .title {
@@ -206,6 +204,11 @@ h1 {
   color: crimson;
 }
 
+.second {
+  text-align: center;
+  justify-content:baseline;
+}
+
 a:visited {
   color: #666;
 }
@@ -285,3 +288,4 @@ footer p {
     background-color:#343a40;
     color: white;
   }
+

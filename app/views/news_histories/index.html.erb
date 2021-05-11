@@ -2,7 +2,7 @@
 
 
 <form class="form-inline-center container">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search"
+      <input class="form-control mr-sm-2" type="search1" placeholder="Search"
       aria-label="Search" name="content">
       <div class="text-center">
       <button class="btn btn-outline-danger my-2 my-ms-5"
@@ -17,7 +17,8 @@
     <% @news_histories.each do |news_history| %>
     <tr>
         <td class="container text-center"><%= news_history.title %>  
-        <%= link_to news_history.document.filename, rails_blob_path(news_history.document, disposition: 'attachment'), class:"btn btn-outline-danger text-center", target: '_blank' %><hr></td>
+        <%= link_to news_history.document.filename, rails_blob_path(news_history.document, disposition: 'attachment'), class:"btn btn-outline-danger text-center", target: '_blank' %>
+        <p class="card-text"><small class="text-muted"><%= news_history.created_at%></small></p><hr></td>
         <td><%= link_to 'Destroy', news_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
