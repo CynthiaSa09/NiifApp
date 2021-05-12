@@ -65,7 +65,7 @@
     <div class="container text-center">
     <div class="profile">
       <% if user_signed_in? %>
-       <%#= image_tag current_user.profile_photo, width: 140, height: 120 %>
+       <%= image_tag current_user.profile_photo, width: 140, height: 120 %>
        <%= link_to current_user.first_name, edit_user_registration_path,class:'nav-link text-danger' %>  
       <% end %>
     </div>
