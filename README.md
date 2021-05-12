@@ -48,7 +48,7 @@ Finalmente, para levantar el servidor se ejecuta el siguiente comando:
 
 
 * Para iniciar debe loguearse con un usuario
-Run Heroku https://agile-fortress-68289.herokuapp.com/ user:cinthya@cinthya.com password:123456
+Run Heroku https://afternoon-lake-44601.herokuapp.com/ user:cinthya@cinthya.com password:123456
 
  
 
