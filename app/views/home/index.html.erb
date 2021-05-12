@@ -119,4 +119,31 @@
     <p class="grafic">El movimiento anual del mercado bursátil en Asia el último año. Como se representa en el gráfico los colores representan los Tipos diferentes de Nombres que representan la Banca y sus diferentes categorias de cuentas.</p>
     <td><%= link_to 'Show', cards_path, class:"grafic" %></td>
     </div>
-
+    
+<hr>
+<div class="carousel container">
+  <div id="carouselExampleIndicators" class="carousel slide d-none d-sm-none d-md-block" data-ride="carousel">
+    <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active indicator"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1" class="indicator"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row">
+          <div class="col-3">
+            <%= image_tag 'las-normas.jpg', width: 230%>
+          </div>
+          <div class="col-3">
+            <%= image_tag 'logo1.jpg', width: 220%>
+          </div>
+          <div class="col-3">
+            <%= image_tag 'descarga.jpg', width: 200, height: 135%>
+          </div>
+          <div class="col-3">
+            <%= image_tag 'index.jpg', width: 200, height: 135%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

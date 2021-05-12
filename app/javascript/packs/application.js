@@ -8,6 +8,8 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+import carrousel from '../src/carrousel'
+
 import content_detail from '../src/content_detail'
 
 import '../stylesheets/style.css'

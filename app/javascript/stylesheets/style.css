@@ -157,21 +157,7 @@ ul {
   line-height: 30px;
 }
 
-li {
-  margin-top: 12px;
-  font-size: 10px;
-  letter-spacing: 0.48px;
-  font-weight: bold;
-  color: crimson;
-}
 
-li {
-  font-size: 15px;
-  letter-spacing: 0.6px;
-  font-weight: bold;
-  line-height: 30px;
-  color: crimson;
-}
 
 .hr {
   margin-bottom: 17px;
@@ -289,3 +275,20 @@ footer p {
     color: white;
   }
 
+  .carousel {
+    margin-bottom: 57px;
+    width: 1000px;
+    background-color:#ffffff02;
+}
+
+.carousel.indicators {
+    top: 260px;
+}
+
+.carousel.indicators li.indicator {
+    margin-top: 100px;
+    width: 500px;
+    height: 500px;
+    background-color:#333a40;
+    border-radius: 100%;
+}
