@@ -67,3 +67,5 @@ gem "groupdate", "~> 5.2"
 gem  'country_select' ,  '~> 4.0'
 
 gem 'kaminari'
+
+gem 'rails_12factor'
