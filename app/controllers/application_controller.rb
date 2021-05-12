@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
 
   protected
   def configure_permitted_params
-    devise_parameter_sanitizer.permit(:edit, keys: [:first_name, :last_name, :country, :profession])
+    devise_parameter_sanitizer.permit(:edit, keys: [:first_name, :last_name, :profile_photo, :country, :profession])
   end
 end

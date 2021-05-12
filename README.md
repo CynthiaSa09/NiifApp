@@ -5,14 +5,10 @@
 Characteristics
 
 * Ruby version 2.7.2
-
 *  gem install
-
-gem "faker", "~> 2.17"
-
-gem "chartkick", "~> 4.0"
-
-gem "groupdate", "~> 5.2"
+* gem "faker", "~> 2.17"
+* gem "chartkick", "~> 4.0"
++ gem "groupdate", "~> 5.2"
 
 gem  'country_select' ,  '~> 4.0'
 
@@ -30,4 +26,6 @@ Para iniciar debe loguearse con un usuario
 
 * 
 
-* LISENCE.md 
+* LICENSE.md 
+
+markdown
